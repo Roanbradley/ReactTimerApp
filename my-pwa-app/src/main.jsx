@@ -1,8 +1,12 @@
+
+//boot the app file 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+
+//were react runs finds <div = id > inside index.html renders the app component
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
