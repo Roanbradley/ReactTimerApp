@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { RouterProvider, BrowserRouter, Routes, Route, Link  } from 'react-router-dom' ;
 import { router } from './constants/router';
+import NavbarSample from '../Components/Navbar';
+
 
 //top level component of the app  
 // ├ Navbar
@@ -14,6 +16,7 @@ import { router } from './constants/router';
 function App() {
   return (
     <div className='App'> 
+      <NavbarSample></NavbarSample>
       <RouterProvider router={router} />
       </div>
      
