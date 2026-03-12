@@ -1,5 +1,7 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+
+import {Navbar, Nav, Container} from 'react-bootstrap';
+import Settings from '../src/pages/Settings';
+
 
 function NavbarSample(){
     return(
@@ -8,10 +10,11 @@ function NavbarSample(){
         <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse" className="justify-content-end">
-          <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
-          </Navbar.Text>
+         <Nav>
+          <Nav.Link href="#settings">Settings</Nav.Link>
+        </Nav>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );
