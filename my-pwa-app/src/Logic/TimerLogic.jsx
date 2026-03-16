@@ -30,6 +30,11 @@ export function pauseTimer(setIsRunning){
 setIsRunning(false);
 }
 
+export function resumeTimer(setIsRunning)
+{
+    setIsRunning(true);
+}
+
 
 
 

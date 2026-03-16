@@ -1,4 +1,4 @@
-import {pauseTimer, startTimer, useCountDown} from "../Logic/TimerLogic";
+import { resumeTimer, pauseTimer, startTimer, useCountDown} from "../Logic/TimerLogic";
 import { useState, useEffect } from "react";
 
 
@@ -12,6 +12,8 @@ export default function Timer(){
             <p> work {secondsLeft} seconds</p>
             <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 60)}>Start Timer</button>
             <button onClick={() => pauseTimer(setIsRunning)}> pause Timer </button>
+            <button onClick={() => resumeTimer(setIsRunning)}> resume Timer </button>
+
         </div>
     );
 }
