@@ -10,6 +10,7 @@ export default function Timer(){
         <div>
             <h1>Timer page</h1>
             <p> work {secondsLeft} seconds</p>
+            <p> Rest </p>
             <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 60)}>Start Timer</button>
             <button onClick={() => pauseTimer(setIsRunning)}> pause Timer </button>
             <button onClick={() => resumeTimer(setIsRunning)}> resume Timer </button>
