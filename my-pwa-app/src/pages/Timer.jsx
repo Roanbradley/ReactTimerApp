@@ -1,19 +1,21 @@
-import { resumeTimer, pauseTimer, startTimer, useCountDown} from "../Logic/TimerLogic";
-import { useState, useEffect } from "react";
 
+import {pauseTimer, startTimer, useCountDown} from "../Logic/TimerLogic";
+import { useState, useEffect } from "react";
+import Stack from "@mui/material/Stack";
 
 export default function Timer(){
 
-   const {secondsLeft, setSecondsLeft, setIsRunning } = useCountDown();
+   const {secondsLeft, setSecondsLeft, setIsRunning, running} = useCountDown();
 
     return(
         <div>
-            <h1>Timer page</h1>
-            <p> work {secondsLeft} seconds</p>
-            <p> Rest </p>
+            <p> Work {secondsLeft} seconds</p>
+
+            <Stack>
             <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 60)}>Start Timer</button>
-            <button onClick={() => pauseTimer(setIsRunning)}> pause Timer </button>
-            <button onClick={() => resumeTimer(setIsRunning)}> resume Timer </button>
+            <button onClick={() => pauseTimer(setIsRunning, running)}> pause Timer </button>
+            <button> Rounds </button>
+            </Stack>
 
         </div>
     );
