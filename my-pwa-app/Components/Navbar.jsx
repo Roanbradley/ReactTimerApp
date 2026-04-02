@@ -7,7 +7,7 @@ function NavbarSample(){
     return(
    <Navbar  fixed = "top" bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        <Navbar.Brand href="#home">Shadow box</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-collapse" />
         <Navbar.Collapse id="navbar-collapse" className="justify-content-end">
          <Nav>

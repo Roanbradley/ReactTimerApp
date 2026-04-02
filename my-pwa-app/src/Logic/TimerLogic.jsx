@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Prev } from "react-bootstrap/esm/PageItem";
 
 export function useCountDown(){
 
@@ -15,7 +16,7 @@ const [durations, setDurations] = useState({
 useEffect(() => {
 
     //check to see if timer is puased
-        if(!running == true) 
+        if(!running) 
         {
             return console.log("timer is puased");
         }
@@ -23,8 +24,14 @@ useEffect(() => {
     //check to see if timer is finished
         if(secondsLeft <= 0)
         {
-        setRounds(round -2 )
-        return console.log("timer us finished round", {round});
+         setRounds(prevRound =>{
+            
+            const newRound = prevRound - 1;
+            console.log(newRound);
+            return newRound;
+         } 
+        )
+        return
         }
  
   

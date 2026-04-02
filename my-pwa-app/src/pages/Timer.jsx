@@ -12,7 +12,7 @@ export default function Timer(){
             <p> Work {secondsLeft} seconds</p>
 
             <Stack>
-            <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 60)}>Start Timer</button>
+            <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 10)}>Start Timer</button>
             <button onClick={() => pauseTimer(setIsRunning, running)}> pause Timer </button>
             <button> Rounds </button>
             </Stack>
