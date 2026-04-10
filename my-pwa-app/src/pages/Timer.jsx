@@ -9,7 +9,7 @@ export default function Timer(){
 
     return(
         <div>
-            <p> Work {secondsLeft} seconds</p>
+            <p className = "seconds">{secondsLeft}  </p>
 
             <Stack>
             <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 10)}>Start Timer</button>
