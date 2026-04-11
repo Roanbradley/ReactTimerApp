@@ -13,29 +13,29 @@ const [durations, setDurations] = useState({
     Break : 30
 })
 
+
+
 useEffect(() => {
 
-    //check to see if timer is puased
+         //check to see if timer is puased
         if(!running) 
         {
             return console.log("timer is puased");
         }
 
-    //check to see if timer is finished
+        //check to see if timer is finished
         if(secondsLeft <= 0)
         {
-         setRounds(prevRound =>{
-            
-            const newRound = prevRound - 1;
-            console.log(newRound);
-            return newRound;
-         } 
-        )
-        return
+         setRounds(prevRound =>
+        {
+        const newRound = prevRound - 1;
+        console.log(newRound);
+         return newRound;
+        })
+        
         }
  
-  
-    //do this when timer is not finished
+    //do this when timer is not finished 
     const timeout = setTimeout(() =>{
     setSecondsLeft(secondsLeft - 1)
     },1000)
@@ -44,8 +44,7 @@ useEffect(() => {
     },[secondsLeft, running]);
 
     return {secondsLeft, setIsRunning, running, setSecondsLeft, round};
-
-}
+    }
 
 
 export function startTimer(setSecondsLeft, setIsRunning, seconds ){
