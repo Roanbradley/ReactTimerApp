@@ -5,11 +5,12 @@ import Stack from "@mui/material/Stack";
 
 export default function Timer(){
 
-   const {secondsLeft, setSecondsLeft, setIsRunning, running} = useCountDown();
+   const {secondsLeft, setSecondsLeft, setIsRunning, running, mode, setMode} = useCountDown();
 
     return(
         <div>
-            <p className = "seconds">{secondsLeft}  </p>
+            <p>hello {mode}</p>
+            <p className = "seconds">{secondsLeft}</p>
 
             <Stack>
             <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 10)}>Start Timer</button>
