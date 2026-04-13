@@ -13,7 +13,7 @@ export default function Timer(){
             <p className = "seconds">{formatTime(secondsLeft)}</p>
 
             <Stack>
-            <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 70)}>Start Timer</button>
+            <button onClick={() => startTimer(setSecondsLeft, setIsRunning, 10)}>Start Timer</button>
             <button onClick={() => pauseTimer(setIsRunning, running)}> pause Timer </button>
             <button> Rounds </button>
             </Stack>

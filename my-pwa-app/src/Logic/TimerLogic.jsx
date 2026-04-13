@@ -9,7 +9,7 @@ const [running, setIsRunning] = useState(false);
 const [mode, setMode] = useState("nuetral");
 const [round, setRounds] = useState(3);
 const [durations, setDurations] = useState({
-    Work : 5,
+    Work :  6,
     Break : 5
 })
 
@@ -48,7 +48,7 @@ useEffect(() => {
         }
 
         //do this when break is finished
-        else
+        if(mode === "break" || mode === "nuetral")
         {
         setMode("work");
         setSecondsLeft(durations.Work);
@@ -88,6 +88,7 @@ else
 
 }
 
+//TODO need to implement hours
 export function formatTime(secondsLeft)
 {
         
