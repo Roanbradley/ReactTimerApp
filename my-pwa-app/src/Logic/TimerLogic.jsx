@@ -4,7 +4,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
 export function useCountDown(){
 
 //work timer placeholders
-const [secondsLeft, setSecondsLeft] = useState(10);
+const [secondsLeft, setSecondsLeft] = useState(70);
 const [running, setIsRunning] = useState(false);
 const [mode, setMode] = useState("nuetral");
 const [round, setRounds] = useState(3);
@@ -86,6 +86,15 @@ else
     setIsRunning(true)
 }
 
+}
+
+export function formatTime(secondsLeft)
+{
+        
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = Math.floor(secondsLeft % 60);
+    return <p>{minutes.toString().padStart(2, 0)} : {seconds.toString().padStart(2,0)} </p>
+  
 }
 
 
