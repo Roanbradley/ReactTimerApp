@@ -4,7 +4,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
 export function useCountDown(){
 
 //work timer placeholders
-const [secondsLeft, setSecondsLeft] = useState(70);
+const [secondsLeft, setSecondsLeft] = useState(10);
 const [running, setIsRunning] = useState(false);
 const [mode, setMode] = useState("nuetral");
 const [round, setRounds] = useState(3);
@@ -30,7 +30,7 @@ useEffect(() => {
         //when work is done do this
         if(mode === "work")
         {
-         setRounds(prevRound => {
+        setRounds(prevRound => {
         const newRound = prevRound - 1;
 
         console.log(newRound);
@@ -38,14 +38,17 @@ useEffect(() => {
         if(newRound <= 0 )
         {   
             setIsRunning(false)
-            return 0;
+            setMode("complete");
+            console.log("workout complete");
+            return <div>Workout complete</div>
+
         }
          return newRound;
         })
 
         setMode("break");
         setSecondsLeft(durations.Break);
-        }
+        }2
 
         //do this when break is finished
         if(mode === "break" || mode === "nuetral")
@@ -64,11 +67,11 @@ useEffect(() => {
     return ()=> clearTimeout(timeout);
     },[secondsLeft, running]);
 
-    return {secondsLeft, setIsRunning, running, setSecondsLeft, round, mode};
+    return {secondsLeft, setIsRunning, running, setSecondsLeft, setMode, setRounds, round, mode};
     }
 
 
-export function startTimer(setSecondsLeft, setIsRunning, seconds ){
+export function startTimer(setSecondsLeft, setIsRunning, seconds){
 setSecondsLeft(seconds);
 setIsRunning(true);
 }
@@ -86,6 +89,13 @@ else
     setIsRunning(true)
 }
 
+}
+
+export function resetTimer(setSecondsLeft, seconds,  setRounds, round, setMode, mode)
+{
+    setSecondsLeft(seconds);
+    setRounds(round);
+    setMode(mode);
 }
 
 //TODO need to implement hours
